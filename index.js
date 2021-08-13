@@ -110,7 +110,7 @@ function countByRating(movies) {
   return ratingMoviesCountObj;
 }
 
-console.log(countByRating(exampleMovies));
+// console.log(countByRating(exampleMovies));
 
 /**
  * findById()
@@ -126,7 +126,16 @@ console.log(countByRating(exampleMovies));
       // Toy Story 4
     };
  */
-function findById() {}
+function findById(movies, id) {
+  if(movies.length){
+    for(let i=0; i<movies.length; i++){
+      if(id === movies[i].imdbID){
+        return movies[i];
+      };
+    };
+  }
+  return null
+}
 
 /**
  * filterByGenre()
