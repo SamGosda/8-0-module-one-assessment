@@ -134,7 +134,7 @@ function findById(movies, id) {
       };
     };
   }
-  return null
+  return null;
 }
 
 /**
@@ -157,7 +157,21 @@ function findById(movies, id) {
  *  filterByGenre(movies, "Horror")
  *  //> []
  */
-function filterByGenre() {}
+function filterByGenre(movies, genre) {
+  let moviesWithGenre = [];
+  if(movies.length){
+    for(let i=0; i<movies.length; i++){
+      let lowercaseGenresWithoutCommas = (movies[i].genre).split(',').join('').toLowerCase();
+      let arrOfGenres = lowercaseGenresWithoutCommas.split(' ');
+      if(arrOfGenres.includes(genre.toLowerCase())){
+        moviesWithGenre.push(movies[i]);
+      };
+    };
+  };
+  return moviesWithGenre;
+}
+
+// console.log(filterByGenre(exampleMovies));
 
 /**
  * getAllMoviesReleasedAtOrBeforeYear()
